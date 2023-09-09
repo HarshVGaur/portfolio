@@ -49,7 +49,11 @@ ul{
     overflow: hidden; 
 }
 .navi{
-    gap: 20px;
+    gap: 40px;
+}
+.main-header{
+    background-color: #03001C;
+    
 }
 .header{
     background-color: #03001C;
@@ -59,7 +63,13 @@ ul{
     z-index: 99;
     left: 0;
     right:0; 
-   justify-content: space-around;
+   justify-content: space-between;
+}
+.icon{
+    margin-left: 100px;
+}
+.nav-items{
+    margin-right: 120px;
 }
 /* input */
 .search-bar{
@@ -77,8 +87,13 @@ ul{
     border: none;
     cursor: pointer;
     font-family: "Roboto",sans-serif;
-  
+    transition: color 0.3s, box-shadow 0.3s, background-image 0.3s 0.2s;
     height: 110%;
+}
+.search-button:hover{
+    box-shadow: 0px 0px 14px #007bff;
+    background-color: #007bff;
+    background-image: linear-gradient(90deg,#2a80e2 0%,#8dbcf3 100%);
 }
 .news-input{
     width: 200px;
@@ -87,14 +102,25 @@ ul{
     border-radius: 20px;
     border: 2px solid #bbd0e2;
     font-family: "Roboto",sans-serif;
+    transition: transform 0.3s, background-image 0.3s 0.2s,box-shadow 0.2s;
+}
+.news-input:hover{
+    box-shadow: 0 0 14px #007bff;
+
 }
 /* Body item introduction */
+.body-item{
+    background-image: url(dddepth-333.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .body-items {
     margin-top: 70px;
-    /* background-image: url(bg-image\ \(1\).png); */
+    height: 500px;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative; /* Needed for absolute positioning of pseudo-element */
+    
 }
 .body-items::before {
     content: "";
@@ -127,6 +153,12 @@ ul{
     background-image: linear-gradient(90deg,#c8efac 0%,#c8e1dc 100%);
     border-radius: 50%;
     align-self: center;
+  }
+
+  .profile-img img{
+    width: 90%;
+    box-shadow: 0px 0px 14px #03001C;
+    border-radius: 50%;
   }
 
   /* about me */
@@ -181,6 +213,7 @@ ul{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: transform 0.3s, background-image 0.3s 0.2s,box-shadow 0.2s;
 
 }
 .icon-service{
@@ -296,12 +329,17 @@ ul{
     width: 30%;
     margin-top: 10px;
     
-    
+    transition: color 0.3s, box-shadow 0.3s, background-image 0.3s 0.2s;
 }
 
 .button-submit{
     display: flex;
     justify-content: center;
+}
+.submit-button:hover{
+   box-shadow: 0px 0px 14px #007bff;
+   background-color: #007bff;
+   background-image: linear-gradient(90deg,#2a80e2 0%,#8dbcf3 100%);
 }
 .form-inputs{
     /* width: 200px; */
@@ -310,12 +348,25 @@ ul{
     border-radius: 20px;
     border: 2px solid #bbd0e2;
     font-family: "Roboto",sans-serif;
+    transition: color 0.3s, box-shadow 0.3s, background-color 0.3s;
+
+}
+.form-inputs:hover{
+  box-shadow: 0px 0px 14px #007bff;
 }
 
 .company-logo img{
     height: 64px;
     width: 64px;
+    transition: color 0.3s, box-shadow 0.3s, background-color 0.3s;
+    border-radius: 50%;
 } 
+
+.company-logo img:hover{
+    color: #007bff; /* Blue color on hover */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+    background-color: #007bff;
+}
 
 /* footer */
 .footer{
@@ -325,3 +376,41 @@ ul{
     align-items: center;
 }
 
+
+/* responsive */
+
+@media screen and (max-width: 768px) {
+    .flex {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .navi {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-list {
+        margin: 5px 0; /* Add margin to separate navigation items */
+    }
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #fff; /* Default text color */
+    transition: color 0.3s, box-shadow 0.3s; /* Smooth transition for color and box-shadow */
+}
+
+/* Apply styles on hover */
+.nav-list a:hover {
+    color: #007bff; /* Blue color on hover */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Add shadow on hover */
+}
+
+.color-div:hover {
+    color: #007bff;
+    box-shadow: 0 0 14px rgba(0, 123, 255, 0.5);
+    transform: translateY(-10px); /* Move the div upwards */
+    background-color: #4d4691;
+}
